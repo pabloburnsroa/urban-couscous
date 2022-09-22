@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}About Me{% endblock %}
+
+
+
+{% block content %}
+<div class="section-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="section-container-spacer text-center">
+            <h1 class="h2">01 : About Me</h1>
+          </div>
+
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <div class="row">
+                <div class="col-xs-12 col-md-6">
+
+                  <p>Hello, my name is Pablo and I enjoy creating things that live on the internet. My interest in web development started back in 2019 when I took a data science course.</p>
+                  <p>Fast-forward to today, and I am looking to re-align my self-taught skills into a career in software development. My main focus these days is building my skills and portfolio. </p>
+                  <p>Here are a few technologies I've been working with recently: </p>
+                  <ul class="skills-list">
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>Node.js</li>
+                    <li>TypeScript</li>
+                    <li>MongoDB</li>
+                    <li>Python</li>
+                  </ul>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <img src="./static/assets/images/profil.jpg" class="img-responsive" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+       </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+<footer class="footer-container text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>© UNTITLED | Website created with <a href="http://www.mashup-template.com/" title="Create website with free html template">Mashup Template</a>/<a href="https://www.unsplash.com/" title="Beautiful Free Images">Unsplash</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}
+
+{% block script %}
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+     navActivePage();
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %} Edit "{{ project['title'] }}" {% endblock %}
+
+{% block content  %}
+  <div class="section-container">
+    <div class="container">
+        <h2 class="h2">Edit "{{ project['title'] }}"</h2>
+        <div class="form-container">
+            <form method="post">
+                <label for="title">Title</label>
+                <input name="title" id="title" value="{{ request.form['title'] or project['title'] }}" required>
+                <label for="body">Body</label>
+                <textarea name="body" id="body">{{ request.form['body'] or project['body'] }}</textarea>
+                <label for="technologies">Technologies</label>
+                <textarea name="technologies" id="technologies">{{request.form['technologies'] or project['technologies'] }}</textarea>
+                <input type="submit" value="Save">
+            </form>
+            <hr>
+            <form action="{{ url_for('projects.delete', id=project['id']) }}" method="post">
+                <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+            </form>
+        </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+<footer class="footer-container text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>© UNTITLED | Website created with <a href="http://www.mashup-template.com/" title="Create website with free html template">Mashup Template</a>/<a href="https://www.unsplash.com/" title="Beautiful Free Images">Unsplash</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}

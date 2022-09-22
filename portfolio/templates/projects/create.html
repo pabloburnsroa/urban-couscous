@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} New Project {% endblock %}
+
+{% block content  %}
+  <div class="section-container">
+    <div class="container">
+        <h2 class="h2">New Project</h2>
+        <div class="form-container">
+            <form method="post">
+
+                <label for="title">Title</label>
+                <input name="title" id="title" value="{{ request.form['title']}}" required>
+                <label for="body">Body</label>
+                <textarea name="body" id="body">{{ request.form['body'] }}</textarea>
+                <label for="technologies">Technologies</label>
+                <textarea name="technologies" id="technologies">{{request.form['technologies']}}</textarea>
+                <input type="submit" value="Save">
+            </form>
+        </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+<footer class="footer-container text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>© UNTITLED | Website created with <a href="http://www.mashup-template.com/" title="Create website with free html template">Mashup Template</a>/<a href="https://www.unsplash.com/" title="Beautiful Free Images">Unsplash</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}

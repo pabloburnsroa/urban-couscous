@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developed by Orson.io team" name="author">
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="shortcut icon" href="{{ url_for('static', filename='icons8-bolt-16.png') }}">
+  <script src="https://kit.fontawesome.com/8990958d09.js" crossorigin="anonymous"></script>
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='main.3f6952e4.css') }}" >
+</head>
+
+{% block body%}
+<body class="">
+{% endblock %}
+<div id="site-border-left"></div>
+<div id="site-border-right"></div>
+<div id="site-border-top"></div>
+<div id="site-border-bottom"></div>
+<!-- Add your content of header -->
+<header>
+  {% block navbar %}
+  <nav class="navbar navbar-fixed-top navbar-default">
+  {% endblock %}
+    <div class="container">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav ">
+          <li><a href="/" title="">Home</a></li>
+          <li><a href="/about" title="">01 : About Me</a></li>
+          <li><a href="/projects" title="">02 : Projects</a></li>
+          <li><a href="/contact" title="">03 : Contact Me</a></li>
+          {% if g.user %}
+          <li><a>Hello, {{g.user['username']}}</a></li>
+          <li><a href="{{url_for('auth.logout')}}" title="">Logout</a></li>
+          {% else %}
+          <li><a href="{{url_for('auth.register')}}" title="">Register</a></li>
+          <li><a href="{{url_for('auth.login')}}" title="">Login</a></li>
+          {% endif %}
+        </ul>
+
+      </div>
+    </div>
+
+  </nav>
+</header>
+<!-- Add your site or app content here -->
+<section class="content">
+
+  {% block content %}
+
+  {% endblock %}
+</section>
+
+
+{% block footer %}{% endblock %}
+
+
+{% block script %}{% endblock %}
+
+<script type="text/javascript" src="{{url_for('static', filename='main.70a66962.js') }}"></script>
+</body>
+
+</html>

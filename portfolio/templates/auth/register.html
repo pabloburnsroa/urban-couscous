@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} Register {% endblock %}
+
+{% block content  %}
+  <div class="section-container">
+      {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+      {% endfor %}
+    <div class="container">
+        <h2 class="h2">Register</h2>
+        <div class="form-container">
+            <form method="post">
+
+                <label for="username">Username</label>
+                <input name="username" id="username" required >
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required >
+                <input type="submit" value="Register">
+            </form>
+        </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+<footer class="footer-container text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>© UNTITLED | Website created with <a href="http://www.mashup-template.com/" title="Create website with free html template">Mashup Template</a>/<a href="https://www.unsplash.com/" title="Beautiful Free Images">Unsplash</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}

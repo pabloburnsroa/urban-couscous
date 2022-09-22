@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask
+from flask import Flask, render_template, send_from_directory
 
 
 def create_app(test_config=None):
@@ -24,15 +24,27 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
+    @app.route('/')
+    def my_home():
+        # print(url_for('static', filename='favicon.ico'))
+        return render_template('home/index.html')
+
+    @app.route('/about')
+    def about_me():
+        return render_template('home/about.html')   \
+
+
+    @app.route('/contact')
+    def contact_me():
+        return render_template('home/contact.html')
 
     from . import db
     db.init_app(app)
 
     from . import auth
     app.register_blueprint(auth.bp)
+
+    from . import projects
+    app.register_blueprint(projects.bp)
 
     return app
