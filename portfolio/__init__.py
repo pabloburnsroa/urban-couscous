@@ -6,6 +6,7 @@ from flask import Flask, render_template, send_from_directory
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
+    print(__name__)
     app.config.from_mapping(
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'portfolio.sqlite'),
